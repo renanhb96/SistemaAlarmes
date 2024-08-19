@@ -1,0 +1,6 @@
+@SistemaAlarmes_HostAddress = http://localhost:5203
+
+GET {{SistemaAlarmes_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
