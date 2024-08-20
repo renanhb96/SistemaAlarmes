@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAlarmes", "SistemaAlarmes\SistemaAlarmes.csproj", "{8039B8B5-E092-4E77-9765-B36255C12CCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAlarmes.Api", "SistemaAlarmes\SistemaAlarmes.Api.csproj", "{8039B8B5-E092-4E77-9765-B36255C12CCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAlarmes.Application", "SistemaAlarmes.Application\SistemaAlarmes.Application.csproj", "{49ED931C-BFC4-450D-AA78-C39EF9498040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAlarmes.Domain", "SistemaAlarmes.Domain\SistemaAlarmes.Domain.csproj", "{0A9E2035-D820-4A93-8C0E-79FB6A099F9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaAlarmes.Infrastructure", "SistemaAlarmes.Infrastructure\SistemaAlarmes.Infrastructure.csproj", "{968AC267-A098-4BFF-B11C-562A524EBD8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{8039B8B5-E092-4E77-9765-B36255C12CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8039B8B5-E092-4E77-9765-B36255C12CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8039B8B5-E092-4E77-9765-B36255C12CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49ED931C-BFC4-450D-AA78-C39EF9498040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49ED931C-BFC4-450D-AA78-C39EF9498040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49ED931C-BFC4-450D-AA78-C39EF9498040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49ED931C-BFC4-450D-AA78-C39EF9498040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9E2035-D820-4A93-8C0E-79FB6A099F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9E2035-D820-4A93-8C0E-79FB6A099F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9E2035-D820-4A93-8C0E-79FB6A099F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9E2035-D820-4A93-8C0E-79FB6A099F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968AC267-A098-4BFF-B11C-562A524EBD8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968AC267-A098-4BFF-B11C-562A524EBD8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968AC267-A098-4BFF-B11C-562A524EBD8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968AC267-A098-4BFF-B11C-562A524EBD8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
