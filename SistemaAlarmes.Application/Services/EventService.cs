@@ -34,7 +34,7 @@ namespace SistemaAlarmes.Application.Services
                 await SendMaintenanceEmail(@event);
             }
         }
-
+        //TODO criar um emailService separado
         private async Task SendMaintenanceEmail(Event @event)
         {
             var mailMessage = new MailMessage

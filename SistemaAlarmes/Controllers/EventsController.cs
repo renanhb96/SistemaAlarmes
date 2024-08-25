@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SistemaAlarmes.Application.Interfaces.Event;
 using SistemaAlarmes.Application.Services;
+using SistemaAlarmes.Application.UseCases;
 using SistemaAlarmes.Domain.Entities;
 
 namespace SistemaAlarmes.Api.Controllers
@@ -8,24 +10,30 @@ namespace SistemaAlarmes.Api.Controllers
     [Route("api/[controller]")]
     public class EventsController : ControllerBase
     {
-        private readonly EventService _eventService;
+        private readonly IProcessEventUseCase _processEventUseCase;
+        private readonly IGetEventByIdUseCase _getEventByIdUseCase;
+        private readonly IGetAllEventsUseCase _getAllEventsUseCase;
 
-        public EventsController(EventService eventService)
+
+        public EventsController(IProcessEventUseCase processEventUseCase, IGetEventByIdUseCase getEventByIdUseCase, IGetAllEventsUseCase getAllEventsUseCase)
         {
-            _eventService = eventService;
+            _processEventUseCase = processEventUseCase;
+            _getEventByIdUseCase = getEventByIdUseCase;
+            _getAllEventsUseCase = getAllEventsUseCase;
+
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Event @event)
+        public async Task<IActionResult> ReceiveEvent([FromBody] Event eventItem)
         {
-            await _eventService.AddAsync(@event);
+            await _processEventUseCase.ExecuteAsync(eventItem);
             return Ok();
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var @event = await _eventService.GetByIdAsync(id);
+            var @event = await _getEventByIdUseCase.ExecuteAsync(id);
             if (@event == null)
                 return NotFound();
 
@@ -35,7 +43,7 @@ namespace SistemaAlarmes.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var events = await _eventService.GetAllAsync();
+            var events = await _getAllEventsUseCase.ExecuteAsync();
             return Ok(events);
         }
     }
