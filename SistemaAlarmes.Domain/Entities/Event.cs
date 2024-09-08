@@ -13,19 +13,15 @@ namespace SistemaAlarmes.Domain.Entities
 
         // Usina (Plant)
         public int? PlantId { get; set; }
-        public Plant Plant { get; set; }
 
         // Eletrocentro
         public int? EletrocentroId { get; set; }
-        public Electrocenter Electrocenter { get; set; }
 
         // Inversor
         public int? InverterId { get; set; }
-        public Inverter Inverter { get; set; }
 
         // String
         public int? StringId { get; set; }
-        public SistemaAlarmes.Domain.Entities.String String { get; set; }
 
         // Painel
         public int? PanelId { get; set; }
