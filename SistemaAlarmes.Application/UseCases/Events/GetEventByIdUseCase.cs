@@ -5,11 +5,11 @@ using SistemaAlarmes.Infrastructure.Interfaces;
 
 namespace SistemaAlarmes.Application.UseCases
 {
-    public class GetEventByIdUseCase : IGetEventByIdUseCase
+    public class GetElectrocenterByIdUseCase : IGetElectrocenterByIdUseCase
     {
         private readonly IEventRepository _eventRepository;
 
-        public GetEventByIdUseCase(IEventRepository eventRepository)
+        public GetElectrocenterByIdUseCase(IEventRepository eventRepository)
         {
             _eventRepository = eventRepository;
         }

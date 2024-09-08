@@ -17,7 +17,7 @@ namespace SistemaAlarmes.Domain.Entities
 
         // Eletrocentro
         public int? EletrocentroId { get; set; }
-        public Eletrocentro Eletrocentro { get; set; }
+        public Electrocenter Electrocenter { get; set; }
 
         // Inversor
         public int? InverterId { get; set; }

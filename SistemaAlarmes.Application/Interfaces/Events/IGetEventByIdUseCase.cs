@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAlarmes.Application.Interfaces.Event
 {
-    public interface IGetEventByIdUseCase
+    public interface IGetElectrocenterByIdUseCase
     {
         Task<Domain.Entities.Event> ExecuteAsync(int id);
     }

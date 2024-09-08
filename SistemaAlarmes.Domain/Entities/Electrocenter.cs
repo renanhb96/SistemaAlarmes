@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAlarmes.Domain.Entities
 {
-    public class Eletrocentro
+    public class Electrocenter
     {
         public int Id { get; set; }
         public string Name { get; set; }

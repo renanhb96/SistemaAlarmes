@@ -5,7 +5,7 @@ using SistemaAlarmes.Infrastructure.Interfaces;
 
 namespace SistemaAlarmes.Application.UseCases
 {
-    public class GetAllEventsUseCase : IGetAllEventsUseCase
+    public class GetAllEventsUseCase : IGetAllElectrocentersUseCase
     {
         private readonly IEventRepository _eventRepository;
 

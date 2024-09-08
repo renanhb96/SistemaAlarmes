@@ -11,11 +11,11 @@ namespace SistemaAlarmes.Api.Controllers
     public class EventsController : ControllerBase
     {
         private readonly IProcessEventUseCase _processEventUseCase;
-        private readonly IGetEventByIdUseCase _getEventByIdUseCase;
-        private readonly IGetAllEventsUseCase _getAllEventsUseCase;
+        private readonly IGetElectrocenterByIdUseCase _getEventByIdUseCase;
+        private readonly IGetAllElectrocentersUseCase _getAllEventsUseCase;
 
 
-        public EventsController(IProcessEventUseCase processEventUseCase, IGetEventByIdUseCase getEventByIdUseCase, IGetAllEventsUseCase getAllEventsUseCase)
+        public EventsController(IProcessEventUseCase processEventUseCase, IGetElectrocenterByIdUseCase getEventByIdUseCase, IGetAllElectrocentersUseCase getAllEventsUseCase)
         {
             _processEventUseCase = processEventUseCase;
             _getEventByIdUseCase = getEventByIdUseCase;
