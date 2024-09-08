@@ -25,7 +25,6 @@ namespace SistemaAlarmes.Domain.Entities
 
         // Painel
         public int? PanelId { get; set; }
-        public Panel Panel { get; set; }
 
         // Outros campos do evento
         public AssetType AssetType { get; set; }
