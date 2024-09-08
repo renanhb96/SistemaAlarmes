@@ -33,11 +33,11 @@ namespace SistemaAlarmes.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var @event = await _getEventByIdUseCase.ExecuteAsync(id);
-            if (@event == null)
+            var eventPi = await _getEventByIdUseCase.ExecuteAsync(id);
+            if (eventPi == null)
                 return NotFound();
 
-            return Ok(@event);
+            return Ok(eventPi);
         }
 
         [HttpGet]

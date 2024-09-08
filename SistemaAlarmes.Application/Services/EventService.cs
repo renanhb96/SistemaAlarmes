@@ -26,22 +26,22 @@ namespace SistemaAlarmes.Application.Services
             return await _eventRepository.GetAllAsync();
         }
 
-        public async Task AddAsync(Event @event)
+        public async Task AddAsync(Event eventPi)
         {
-            await _eventRepository.AddAsync(@event);
-            if (@event.EventType == EventType.Critical.ToString())
+            await _eventRepository.AddAsync(eventPi);
+            if (eventPi.Severity == SeverityType.Critical.ToString())
             {
-                await SendMaintenanceEmail(@event);
+                await SendMaintenanceEmail(eventPi);
             }
         }
         //TODO criar um emailService separado
-        private async Task SendMaintenanceEmail(Event @event)
+        private async Task SendMaintenanceEmail(Event eventPi)
         {
             var mailMessage = new MailMessage
             {
                 From = new MailAddress("noreply@yourcompany.com"),
-                Subject = "Maintenance Required: " + @event.EventType,
-                Body = $"Asset: {@event.AssetName}\nEvent Type: {@event.EventType}\nTimestamp: {@event.StartDate}\nDescription: {@event.Description}",
+                Subject = "Maintenance Required: " + eventPi.AssetType,
+                Body = $"Asset: {eventPi.AssetType}\nTimestamp: {eventPi.StartDate}\nDescription: {eventPi.Description}",
                 IsBodyHtml = false
             };
 

@@ -30,10 +30,10 @@ namespace SistemaAlarmes.Application.UseCases.Event
             await _eventRepository.AddAsync(eventItem);
 
             // Envia email se o evento for crítico
-            if (eventItem.EventType == EventType.Critical.ToString())
+            if (eventItem.Severity == SeverityType.Critical.ToString())
             {
                 string subject = "Critical Event Alert";
-                string body = $"A critical event occurred: {eventItem.AssetName}. Description: {eventItem.Description}";
+                string body = $"A critical event occurred: {eventItem.AssetType}. Description: {eventItem.Description}";
                 await _sendEmailUseCase.ExecuteAsync("operator@yourcompany.com", subject, body);
             }
         }

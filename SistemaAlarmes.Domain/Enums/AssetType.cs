@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SistemaAlarmes.Domain.Enums
+﻿namespace SistemaAlarmes.Domain.Enums
 {
     public enum AssetType
     {
-        Module,
+        Plant,
         Electrocenter,
-        Inversor,
+        Inverter,
+        Panel,
+        String,
     }
 }

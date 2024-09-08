@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAlarmes.Domain.Enums
 {
-    public enum EventType
+    public enum SeverityType
     {
         Information,
         Warning,
