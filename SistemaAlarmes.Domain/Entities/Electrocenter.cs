@@ -12,6 +12,9 @@ namespace SistemaAlarmes.Domain.Entities
         public string Name { get; set; }
         public int PlantId { get; set; }
         public Plant Plant { get; set; }  // Relação com a usina
+        public IEnumerable<Inverter> Inverters { get; set; }
+        public IEnumerable<Event> Events { get; set; }
+
     }
 
 }

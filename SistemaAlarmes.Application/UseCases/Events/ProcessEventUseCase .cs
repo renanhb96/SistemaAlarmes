@@ -55,9 +55,9 @@ public class ProcessEventUseCase : IProcessEventUseCase
             if (plant == null) throw new Exception("Plant ID does not exist.");
         }
 
-        if (eventItem.EletrocentroId.HasValue)
+        if (eventItem.ElectrocenterId.HasValue)
         {
-            var eletrocentro = await _electrocenterRepository.GetByIdAsync(eventItem.EletrocentroId.Value);
+            var eletrocentro = await _electrocenterRepository.GetByIdAsync(eventItem.ElectrocenterId.Value);
             if (eletrocentro == null) throw new Exception("Eletrocentro ID does not exist.");
 
             if (eventItem.PlantId.HasValue && eletrocentro.PlantId != eventItem.PlantId.Value)
@@ -71,15 +71,15 @@ public class ProcessEventUseCase : IProcessEventUseCase
             var inverter = await _inverterRepository.GetByIdAsync(eventItem.InverterId.Value);
             if (inverter == null) throw new Exception("Inverter ID does not exist.");
 
-            if (eventItem.EletrocentroId.HasValue && inverter.EletrocentroId != eventItem.EletrocentroId.Value)
+            if (eventItem.ElectrocenterId.HasValue && inverter.ElectrocenterId != eventItem.ElectrocenterId.Value)
             {
                 throw new Exception("Inverter does not belong to the specified Eletrocentro.");
             }
         }
 
-        if (eventItem.StringId.HasValue)
+        if (eventItem.ModuleId.HasValue)
         {
-            var stringEntity = await _moduleRepository.GetByIdAsync(eventItem.StringId.Value);
+            var stringEntity = await _moduleRepository.GetByIdAsync(eventItem.ModuleId.Value);
             if (stringEntity == null) throw new Exception("Module ID does not exist.");
 
             if (eventItem.InverterId.HasValue && stringEntity.InverterId != eventItem.InverterId.Value)

@@ -11,6 +11,8 @@ namespace SistemaAlarmes.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public int InverterId { get; set; }
-        public Inverter Inverter { get; set; }  // Relação com o inversor
+        public Inverter Inverter { get; set; } 
+        public IEnumerable<Event> Events { get; set; }
+
     }
 }

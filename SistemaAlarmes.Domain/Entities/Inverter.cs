@@ -10,7 +10,10 @@ namespace SistemaAlarmes.Domain.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int EletrocentroId { get; set; }
-        public Electrocenter Electrocenter { get; set; }  // Relação com o eletrocentro
+        public int ElectrocenterId { get; set; }
+        public Electrocenter Electrocenter { get; set; }
+        public IEnumerable<Module> Modules { get; set; }
+        public IEnumerable<Event> Events { get; set; }
+
     }
 }

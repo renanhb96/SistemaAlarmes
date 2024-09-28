@@ -21,17 +21,17 @@ namespace SistemaAlarmes.Infrastructure.Repositories
 
         public async Task<Module> GetByIdAsync(int id)
         {
-            return await _context.Strings.FindAsync(id);
+            return await _context.Modules.FindAsync(id);
         }
 
         public async Task<IEnumerable<Module>> GetAllAsync()
         {
-            return await _context.Strings.ToListAsync();
+            return await _context.Modules.ToListAsync();
         }
 
         public async Task AddAsync(Module Module)
         {
-            await _context.Strings.AddAsync(Module);
+            await _context.Modules.AddAsync(Module);
             await _context.SaveChangesAsync();
         }
     }
