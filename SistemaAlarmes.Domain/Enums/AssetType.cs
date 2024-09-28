@@ -5,7 +5,6 @@
         Plant,
         Electrocenter,
         Inverter,
-        Panel,
-        String,
+        Module,
     }
 }

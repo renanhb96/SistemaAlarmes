@@ -20,11 +20,8 @@ namespace SistemaAlarmes.Domain.Entities
         // Inversor
         public int? InverterId { get; set; }
 
-        // String
+        // Module
         public int? StringId { get; set; }
-
-        // Painel
-        public int? PanelId { get; set; }
 
         // Outros campos do evento
         public AssetType AssetType { get; set; }

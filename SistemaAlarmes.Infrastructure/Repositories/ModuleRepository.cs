@@ -6,32 +6,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using String = SistemaAlarmes.Domain.Entities.String;
+using Module = SistemaAlarmes.Domain.Entities.Module;
 
 namespace SistemaAlarmes.Infrastructure.Repositories
 {
-    public class StringRepository : IStringRepository
+    public class ModuleRepository : IModuleRepository
     {
         private readonly AppDbContext _context;
 
-        public StringRepository(AppDbContext context)
+        public ModuleRepository(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<String> GetByIdAsync(int id)
+        public async Task<Module> GetByIdAsync(int id)
         {
             return await _context.Strings.FindAsync(id);
         }
 
-        public async Task<IEnumerable<String>> GetAllAsync()
+        public async Task<IEnumerable<Module>> GetAllAsync()
         {
             return await _context.Strings.ToListAsync();
         }
 
-        public async Task AddAsync(String String)
+        public async Task AddAsync(Module Module)
         {
-            await _context.Strings.AddAsync(String);
+            await _context.Strings.AddAsync(Module);
             await _context.SaveChangesAsync();
         }
     }

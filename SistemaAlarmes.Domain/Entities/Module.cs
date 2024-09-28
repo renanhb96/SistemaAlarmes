@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SistemaAlarmes.Domain.Entities
 {
-    public class Panel
+    public class Module
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int StringId { get; set; }
-        public String String { get; set; }  // Relação com a string
+        public int InverterId { get; set; }
+        public Inverter Inverter { get; set; }  // Relação com o inversor
     }
 }

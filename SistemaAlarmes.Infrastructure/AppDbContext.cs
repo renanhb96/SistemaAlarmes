@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaAlarmes.Domain.Entities;
-using String = SistemaAlarmes.Domain.Entities.String;
+using Module = SistemaAlarmes.Domain.Entities.Module;
 
 namespace SistemaAlarmes.Infrastructure
 {
@@ -11,8 +11,7 @@ namespace SistemaAlarmes.Infrastructure
         public DbSet<Plant> Plants { get; set; }
         public DbSet<Electrocenter> Electrocenters { get; set; }
         public DbSet<Inverter> Inverters { get; set; }
-        public DbSet<String> Strings { get; set; }
-        public DbSet<Panel> Panels { get; set; }
+        public DbSet<Module> Strings { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

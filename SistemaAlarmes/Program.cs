@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using SistemaAlarmes.Application.Interfaces.Email;
 using SistemaAlarmes.Application.Interfaces.Event;
 using SistemaAlarmes.Application.UseCases.Email;
-using SistemaAlarmes.Application.UseCases.Event;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +22,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Register repositories and use cases
 builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IPlantRepository, PlantRepository>();
+builder.Services.AddScoped<IElectrocenterRepository, ElectrocenterRepository>();
+builder.Services.AddScoped<IInverterRepository, InverterRepository>();
+builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
 builder.Services.AddScoped<ISendEmailUseCase, SendEmailUseCase>();
 builder.Services.AddScoped<IProcessEventUseCase, ProcessEventUseCase>();
